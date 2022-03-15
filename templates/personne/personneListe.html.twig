@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+<div class="container" mt-4>
+    <h1>Liste des utilisateurs</h1>
+    <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+        </thead>
+        <tbody>
+            {% for personnes in personne %}
+                <tr>
+                    <td>{{ personnes.id }}</td>
+                    <td>{{ personnes.nom }}</td>
+                    <td>{{ personnes.prenom }}</td>
+                     <td>{{ personnes.age }} ans</td>
+                </tr>
+                
+            {% else %}
+                <p>Aucune personne inscrite</p>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

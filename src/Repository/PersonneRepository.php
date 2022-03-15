@@ -45,6 +45,12 @@ class PersonneRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAll()
+    {
+        return $this->findBy(array(), array('nom' => 'ASC'));
+    }
+
+
     // /**
     //  * @return Personne[] Returns an array of Personne objects
     //  */
